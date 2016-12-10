@@ -29,6 +29,10 @@ function start(){
         running = 1;
         increment();
     }
+     else
+         reset();
+    }
+}
 function Pause(){
     if{running == 0;)
          running = 0;
