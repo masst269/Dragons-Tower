@@ -22,53 +22,39 @@ var server = app.listen(app.get('port'), function (){
   console.log('== Server Running');
 });
 
-var count = 0;
+    var time = 0;
 var running = 0;
-
 function start(){
-if(running == 0){
-    running = 1;
-    var timer = document.getElementById("output").innerHTML = "0:00:00:00";
-    increment();
-    fs.readFile('/etc/passwd', 'utf8', function readFileCallback(err, data){
-        if (err){
-            console.log(err);
-        } else {
-        obj = JSON.parse(data);
-        obj.table.push({id: 2, square:3});
-        json = JSON.stringify(obj);
-        fs.writeFile(file, json, 'utf8', callback);
-    }});
-
-}};
-
-function pause() {
-if(running == 1){
-    running = 0;
-  var timer = document.getElementById("output").innerHTML = "0:00:00:00";
-}};
-
-function reset(){
-running = 0;
-count = 0;
-var timer = document.getElementById("output").innerHTML = "0:00:00:00";
-};
-
-function increment(){
-if(running == 1){
-    setTimeout(function(){
-        count++;
-        var mins = Math.floor(time/10/60);
-        var secs = Math.floor(time/10 % 60);
-        var hours = Math.floor(time/10/60/60);
-        var tenths = time % 10;
-        if(mins < 10){
-            mins = "0" + mins;
-        }
-        if(secs < 10){
-            secs = "0" + secs;
-        }
-        document.getElementById("t").innerHTML = hours + ":" + mins + ":" + secs + ":" + tenths + "0";
+    if(running == 0){
+        running = 1;
         increment();
-    },100)
-}};
+    }
+function Pause(){
+    if{running == 0;)
+         running = 0;
+      }
+}
+function reset(){
+    running = 0;
+    time = 0;
+    document.getElementById("output").innerHTML = "0:00:00:00";
+}
+function increment(){
+    if(running == 1){
+        setTimeout(function(){
+            time++;
+            var mins = Math.floor(time/10/60);
+            var secs = Math.floor(time/10 % 60);
+            var hours = Math.floor(time/10/60/60);
+            var tenths = time % 10;
+            if(mins < 10){
+                mins = "0" + mins;
+            }
+            if(secs < 10){
+                secs = "0" + secs;
+            }
+            document.getElementById("output").innerHTML = hours + ":" + mins + ":" + secs + ":" + tenths + "0";
+            increment();
+        },100)
+    }
+}
