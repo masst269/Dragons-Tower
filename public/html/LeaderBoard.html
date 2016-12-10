@@ -12,11 +12,17 @@
     <nav>
       <ul class="navbar-list">
         <li  class="navbar-item">
-          <a href="../index.html">Exit</a>
+          <a href="/index.html">Exit</a>
         </li>
         <li  class="navbar-item">
-          <a href="../index.html">Home</a>
+          <a href="/index.html">Home</a>
         </li>
+
+      </header>
+
+  </head>
+
+<body class="main-pages">
 
   <main class="parent">
         <h1><span>Leader Board</span></h1>
@@ -28,8 +34,8 @@
       </div>
 
   </main>
-  <div class="button-container">
-    <button id="add-note">+</button>
+  <div class="add-note-button-container">
+    <button id="add-note-button">+</button>
   </div>
 
 <footer>
@@ -39,7 +45,7 @@
 </footer>
 
 <div id="modal-backdrop" class="hidden"></div>
-<div id="modal" class="hidden">
+<div id="add-note-modal" class="hidden">
   <div class="modal-dialog">
 
     <div class="modal-header">
@@ -50,7 +56,8 @@
     <div class="modal-body">
       <div class="todo-input-element required">
         <label for="name">Name</label>
-        <input type="text" id="name">
+        <!-- <input type="text" id="name"> -->
+        <textarea id="name"></textarea>
       </div>
     </div>
 
@@ -62,7 +69,6 @@
   </div>
 </div>
 
+</body>
 
-<script src="index.js"></script>
-
-</html>
+<script src="../javascript/index.js"></script>
