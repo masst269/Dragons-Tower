@@ -1,0 +1,68 @@
+<!--Last Page, Leaderboard wtimes ranked from highest to lowest.-->
+
+<head>
+
+  <meta  charset="utf-8">
+  <title>The Game - Scene</title>
+<!-- linking to the seperate css styling page specific to this htm -->
+  <link rel="stylesheet" href="../css/game.css" media="screen">
+
+  <header>
+
+    <nav>
+      <ul class="navbar-list">
+        <li  class="navbar-item">
+          <a href="../index.html">Exit</a>
+        </li>
+        <li  class="navbar-item">
+          <a href="../index.html">Home</a>
+        </li>
+
+  <main class="parent">
+        <h1><span>Leader Board</span></h1>
+      <div id="box">
+        <h2 id="name1">Name: <div id="time2"> Time: </div> </h2>
+        <ul>
+          <li id="name1">Name: <div id="time2"> Time: </div> </li>
+        </ul>
+      </div>
+
+  </main>
+  <div class="button-container">
+    <button id="add-note">+</button>
+  </div>
+
+<footer>
+  <div class="copyright">
+    Copyright &copy; 2016
+  </div>
+</footer>
+
+<div id="modal-backdrop" class="hidden"></div>
+<div id="modal" class="hidden">
+  <div class="modal-dialog">
+
+    <div class="modal-header">
+      <h3>Add a LeaderBoard Entry</h3>
+      <button type="button" class="modal-close-button">&times;</button>
+    </div>
+
+    <div class="modal-body">
+      <div class="todo-input-element required">
+        <label for="name">Name</label>
+        <input type="text" id="name">
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="modal-cancel-button">Cancel</button>
+      <button type="button" class="modal-accept-button">Add</button>
+    </div>
+
+  </div>
+</div>
+
+
+<script src="index.js"></script>
+
+</html>
