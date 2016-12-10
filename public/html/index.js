@@ -1,11 +1,51 @@
-//The dialog
-var modal = document.getElementById("info-dialog");
-//including the backdrop for functions
-var backdrop = document.getElementById("info-backdrop");
-//activating the instruction button
-var btn = document.getElementById("info-button");
+var close = document.getElementsByClassName('dismiss-button');
+var i;
+for (i = 0; i < close.length; i++) {
+close[i].addEventListener('click', closeNote) }
 
+function closeNote(event){
+var closeClick = event.currentTarget;
+
+if (closeClick.classList.contains("dismiss-button"))
+closeClick.parentNode.remove();
+}
+
+var cancel = document.getElementsByClassName("modal-cancel-button");
+//closing the window and backdrop with the cancel button
+for (i = 0; i < cancel.length; i++) {
+  cancel[i].onclick = function() {
+    modal.style.display = "none";
+    backdrop.style.display = "none";
+  }
+}
+
+var button = document.getElementsByClassName("modal-close-button")
+//closing the window using the x button
+for (i = 0; i < button.length; i++) {
+  button[i].onclick = function() {
+    modal.style.display = "none";
+    backdrop.style.display = "none";
+  }
+}
+
+
+
+
+//The dialog
+var modal = document.getElementById("add-note-modal");
+//including the backdrop for functions
+var backdrop = document.getElementById("modal-backdrop");
+//activating the instruction button
+var btn = document.getElementById("add-note-button");
+
+// btn.addEventListener("click", function() {
+//   modal.style.display = "block";
+//   backdrop.style.display = "block";
+// });
+
+// When the user clicks on the button, open the modal
 btn.addEventListener("click", function() {
+  // document.getElementById('todo-input-details').value = "";
   modal.style.display = "block";
   backdrop.style.display = "block";
 });
@@ -13,15 +53,15 @@ btn.addEventListener("click", function() {
 var startBtn = document.getElementById('start-button');
 var infoBtn = document.getElementById('info-button');
 
-startBtn.addEventListener('click', startGame);
-
-
-function startGame(event){
-
-  console.log("Clicked = " + event);
-  //.open('../html/end.html');
-
-};
+// startBtn.addEventListener('click', startGame);
+//
+//
+// function startGame(event){
+//
+//   console.log("Clicked = " + event);
+//   //.open('../html/end.html');
+//
+// };
 
 function displayModal() {
 
@@ -104,8 +144,6 @@ function insertNewTodo() {
 
 }
 
-
-
   var addNoteButtonElem = document.getElementById('add-name');
   addNoteButtonElem.addEventListener('click', displayAddNoteModal);
 
@@ -117,5 +155,3 @@ function insertNewTodo() {
 
   var modalAcceptButton = document.querySelector('#modal .modal-accept');
   modalAcceptButton.addEventListener('click', insertNewTodo);
-
-});
